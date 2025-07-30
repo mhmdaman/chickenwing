@@ -1,0 +1,10 @@
+ Run the Script with Admin Rights
+
+On Windows:
+Right-click on Command Prompt the click on Run as Administrator.
+ "python packet_sniffer.py" use this command
+On Linux/Mac:
+Open Terminal.
+"sudo python3 packet_sniffer.py" then use this command.
+ 
+ 
