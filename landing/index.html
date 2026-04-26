@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chickenwing — The Full-Stack Packet Sniffer for macOS & Windows</title>
+    <meta name="description"
+        content="Slice through network noise with Chickenwing. A professional, monochrome HUD packet analyzer for macOS and Windows. Intercept, analyze, and secure.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png">
+</head>
+
+<body>
+    <div class="grid-overlay"></div>
+    <div class="scanline"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="icon.png" alt="Chickenwing Logo">
+                Chickenwing
+            </div>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#install">Installation</a>
+                <a href="https://github.com/muhammedaman/packet" target="_blank">GitHub</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="badge animate">Version 1.0.0 Now Available</div>
+            <h1 class="animate">Slice Through<br>The Noise.</h1>
+            <p class="tagline animate delay-1">Layered network analysis wrapped in a brutalist monochrome HUD.</p>
+
+            <div class="cta-group animate delay-2">
+                <a href="Chickenwing.dmg" class="btn btn-primary" id="download-mac">Download (macOS .dmg)</a>
+                <a href="Chickenwing-Setup.exe" class="btn btn-primary" id="download-win">Download (Windows .exe)</a>
+                <a href="#install" class="btn btn-secondary">Installation Guide</a>
+            </div>
+
+            <div class="mockup-container animate delay-3">
+                <div class="mockup">
+                    <div class="mockup-glare"></div>
+                    <img src="hero.png" alt="Chickenwing App Interface Mockup">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Real-time Slicing</h3>
+                <p>Monitor incoming and outgoing traffic with microsecond precision. Filter through layers of protocols with ease.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌑</div>
+                <h3>Monochrome HUD</h3>
+                <p>Designed for focus. A high-contrast, distraction-free interface that puts the raw data at the center of your plate.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Wrapped Security</h3>
+                <p>Identify sensitive data leaks and suspicious patterns automatically with built-in heuristic analysis.</p>
+            </div>
+        </section>
+
+        <section id="install" class="install-section">
+            <h2 class="section-title">Preparation & Serving</h2>
+            <div class="install-grid">
+                <div class="install-card">
+                    <h3>macOS</h3>
+                    <ol class="install-steps">
+                        <li>Download the <strong class="highlight">Chickenwing.dmg</strong> installer.</li>
+                        <li>Open the DMG and drag Chickenwing to your Applications.</li>
+                        <li>Launch the app; you will be prompted for your password to enable network capturing.</li>
+                    </ol>
+                </div>
+                <div class="install-card">
+                    <h3>Windows</h3>
+                    <ol class="install-steps">
+                        <li>Download the <strong class="highlight">Chickenwing-Setup.exe</strong> installer.</li>
+                        <li>Run the installer. Windows will show a <strong class="highlight">UAC Prompt</strong>—click "Yes" to grant Administrator access.</li>
+                        <li>This access is required for the <strong class="highlight">Npcap</strong> driver to capture raw network packets.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Chickenwing by Muhammed Aman. Perfectly wrapped for security researchers.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.feature-card, .install-card, .badge').forEach(el => observer.observe(el));
+
+        // Mock download interaction
+        document.getElementById('download-mac').addEventListener('click', (e) => {
+            console.log('macOS download initiated...');
+        });
+        document.getElementById('download-win').addEventListener('click', (e) => {
+            console.log('Windows download initiated...');
+        });
+    </script>
+</body>
+
+</html>
